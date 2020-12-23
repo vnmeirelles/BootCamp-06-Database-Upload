@@ -10,7 +10,7 @@ export default class CreateTableTransaction1608692675956
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'transaction',
+        name: 'transactions',
         columns: [
           {
             name: 'id',
@@ -51,20 +51,20 @@ export default class CreateTableTransaction1608692675956
     );
 
     await queryRunner.createForeignKey(
-      'transaction',
+      'transactions',
       new TableForeignKey({
         columnNames: ['category_id'],
         referencedColumnNames: ['id'],
-        referencedTableName: 'category',
+        referencedTableName: 'categories',
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE',
-        name: 'fk_category_id',
+        name: 'fk_categories_id',
       }),
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropForeignKey('transaction', 'fk_category_id');
-    await queryRunner.dropTable('transaction');
+    await queryRunner.dropForeignKey('transactions', 'fk_categories_id');
+    await queryRunner.dropTable('transactions');
   }
 }
