@@ -29,7 +29,9 @@ export default class CreateTableTransaction1608692675956
           },
           {
             name: 'value',
-            type: 'int',
+            type: 'decimal',
+            precision: 10,
+            scale: 2,
           },
           {
             name: 'category_id',

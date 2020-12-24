@@ -24,6 +24,7 @@
     "prettier"
   ],
   "rules": {
+    "code" : 128,
     "no-underscore-dangle": "off",
     "prettier/prettier": "error",
     "class-methods-use-this": "off",
